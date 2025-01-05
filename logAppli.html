@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des stages</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles pour gérer l'état réduit de la sidebar */
+        .sidebar {
+            transition: width 0.3s ease;
+            width: 250px; /* Largeur par défaut */
+        }
+
+        .sidebar.reduced {
+            width: 80px; /* Largeur réduite */
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .sidebar.reduced a .icon {
+            margin-right: 0;
+        }
+
+        .sidebar.reduced a {
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <a href="#" class="active">
+            <img src="icons/home.png" alt="Accueil" class="icon"> Accueil
+        </a>
+        <a href="#">
+            <img src="icons/entreprise.png" alt="Entreprise" class="icon"> Entreprise
+        </a>
+        <a href="#">
+            <img src="icons/stage.png" alt="Stagiaire" class="icon"> Stagiaire
+        </a>
+        <a href="#">
+            <img src="icons/inscrire.png" alt="Inscription" class="icon"> Inscription
+        </a>
+        <a href="#">
+            <img src="icons/aide.png" alt="Aide" class="icon"> Aide
+        </a>
+        <a href="#">
+            Déconnexion
+        </a>
+
+        <div class="bottom-buttons">
+            <a href="#" onclick="expandSidebar()">
+                <img src="icons/droite.png" alt="Développer" class="icon"> Développer
+            </a>
+            <a href="#" onclick="reduceSidebar()">
+                <img src="icons/gauche.png" alt="Réduire" class="icon"> Réduire
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <h1>Gestion des stages</h1>
+        </div>
+        <div class="login-info">
+            <p>Vous n'êtes pas connecté.<br>Identifiez-vous pour poursuivre la navigation.</p>
+        </div>
+
+        <div class="login-form">
+            <form action="login.php" method="post">
+                <label for="login">Login :</label>
+                <input type="text" id="login" name="login" required><br>
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required><br>
+
+                <label for="role">Vous êtes :</label><br>
+                <input type="radio" id="etudiant" name="role" value="etudiant" required>
+                <label for="etudiant">Étudiant</label><br>
+                <input type="radio" id="professeur" name="role" value="professeur" required>
+                <label for="professeur">Professeur</label><br><br>
+
+                <button type="submit">Connexion</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour développer la sidebar
+        function expandSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.remove('reduced');
+        }
+
+        // Fonction pour réduire la sidebar
+        function reduceSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.add('reduced');
+        }
+    </script>
+</body>
+
+</html>

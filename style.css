@@ -1,0 +1,471 @@
+/* Styles généraux */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h3 {
+    font-weight: normal;                   /* Pas de gras */
+    font-family: "Times New Roman", serif;  /* Police Times New Roman */
+    text-indent: 75px;                     /* Alinéa de 20px */
+}
+
+
+/* Barre latérale */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #111;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+.sidebar .active {
+    background-color: #0056b3;
+}
+
+.bottom-buttons {
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.mini_icon {
+    width: 1.2%;                        /* Réduit la taille de l'image à 1% de sa taille d'origine */
+    height: auto;                     /* Conserve les proportions de l'image */
+    background-color: #0068d8;         /* Fond bleu derrière l'image */
+    display: inline-block;             /* Assure que l'image peut avoir un fond et se comporte comme un bloc */
+    padding: 5px;                     /* Ajoute un léger espacement autour de l'image */
+    border-radius: 4px;               /* Arrondit légèrement les coins de l'image si vous le souhaitez */
+    vertical-align: bottom;           /* Décale l'image vers le bas */
+}
+
+.icon_tab {
+    width: 24px; /* Taille de l'icône */
+    height: 24px; /* Taille de l'icône */
+    background-color: #004a99; /* Fond bleu */
+    border-radius: 50%; /* Bord arrondi pour un effet circulaire */
+    padding: 5px; /* Espace autour de l'icône */
+    transition: background-color 0.3s, transform 0.3s; /* Transition pour les effets */
+    display: inline-block; /* Affichage en ligne */
+    text-align: center; /* Centrer l'icône */
+    cursor: pointer; /* Afficher le curseur pointer */
+}
+
+.icon_tab img {
+    width: 100%; /* L'icône occupe toute la zone de l'élément */
+    height: 100%; /* L'icône occupe toute la zone de l'élément */
+    border-radius: 50%; /* Assure que l'icône reste circulaire */
+}
+
+/* Effet au survol */
+.icon_tab:hover {
+    background-color: #0056b3; /* Changer la couleur de fond au survol */
+    transform: scale(1.1); /* Agrandir légèrement l'icône */
+}
+
+
+.button-icon {
+    width: 20px; /* Ajuster la taille de l'icône */
+    height: 20px;
+}
+
+
+
+
+
+
+
+
+.icon-buttons {
+    display: flex; /* Utilisation de flexbox pour aligner les boutons horizontalement */
+    justify-content: center; /* Centrer les boutons horizontalement */
+    gap: 10px; /* Espacement entre les boutons */
+}
+
+.icon_button {
+    display: flex; /* Utilisation de flexbox pour centrer l'icône */
+    justify-content: center; /* Centrer l'icône horizontalement */
+    align-items: center; /* Centrer l'icône verticalement */
+    width: 40px; /* Largeur du bouton */
+    height: 40px; /* Hauteur du bouton */
+    border-radius: 50%; /* Bord arrondi pour un effet circulaire */
+    background-color: #004a99; /* Fond bleu foncé */
+    transition: background-color 0.3s, transform 0.3s; /* Transition fluide */
+}
+
+.icon_button img {
+    width: 30px; /* Taille de l'icône */
+    height: 30px; /* Taille de l'icône */
+}
+
+.icon_button:hover {
+    background-color: #0056b3; /* Fond bleu clair au survol */
+    transform: scale(1.1); /* Agrandissement de l'icône */
+}
+
+.tableau td {
+    text-align: center; /* Centrer horizontalement */
+    vertical-align: middle; /* Centrer verticalement */
+    padding: 10px; /* Espace autour du contenu */
+    height: 50px; /* Fixer une hauteur pour les cellules, ajustez si nécessaire */
+}
+
+
+
+
+
+
+
+
+
+
+.entreprise-details {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.entreprise-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.entreprise-details th, .entreprise-details td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.entreprise-details th {
+    background-color: #004a99;
+    color: white;
+}
+
+.button-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #004a99;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.button-back:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* Informations de connexion */
+.login-info {
+    text-align: center;
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+/* Formulaire de connexion */
+.login-form {
+    background-color: #333;
+    color: white;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Alignement des boutons radio et des labels */
+.login-form .radio-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.login-form .radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Bouton de connexion */
+.login-form button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.login-form button:hover {
+    background-color: #004494;
+}
+
+/* Ajustements pour les écrans plus petits */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+    }
+
+    .login-form {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contenu principal */
+
+.entete {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+.titre {
+    color: #0056b3;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.sous-titre {
+    font-family: 'Times New Roman', Times, serif;
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+.content {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+
+.content h2 {
+    text-indent: 40px;
+}
+
+hr {
+    border: none;             /* Supprime la bordure par défaut */
+    border-top: 2px solid #0056b3; /* Ajoute une bordure supérieure de couleur bleue */
+    margin: 20px 0;           /* Ajoute un peu d'espace avant et après */
+}
+
+
+/* Tableaux */
+
+.cadres {
+    margin: 20px 40px;              /* Ajoute une marge autour du cadre (haut/bas et gauche/droite) */
+    width: 90%;                     /* Largeur du cadre, un peu plus petite pour ajouter de l'espace à gauche/droite */
+}
+
+.cadres p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.cadres table {
+    background-color: #f2f2f2;      /* Fond gris clair */
+    border-radius: 10px;            /* Bords légèrement arrondis */
+    border: 2px solid #ccc;         /* Contours gris clair */
+    border-collapse: separate;      /* Pour appliquer correctement les bords arrondis */
+    width: 100%;                    /* Largeur du tableau */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère autour du tableau pour l'effet de profondeur */
+}
+
+.cadres table td {
+    padding: 15px;                  /* Espacement à l'intérieur des cellules */
+}
+
+.cadres table tr {
+    border-bottom: 1px solid #ddd;   /* Ligne grise légère entre les lignes */
+}
+
+.cadres table td p {
+    margin: 0;                       /* Enlever les marges par défaut du paragraphe */
+}
+
+
+
+
+
+
+
+
+
+/* Style général pour le tableau */
+.tableau table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Style des bordures du tableau */
+.tableau table, .tableau th, .tableau td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Style pour la première ligne (en-tête) */
+.tableau th {
+    background-color: #0055af; /* Bleu */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Style des lignes du tableau */
+.tableau tr:nth-child(even) {
+    background-color: #f2f2f2; /* Gris clair pour les lignes paires */
+}
+
+.tableau tr:hover {
+    background-color: #ddd; /* Gris plus foncé au survol */
+}
+
+/* Alignement pour le contenu des colonnes */
+.tableau td {
+    vertical-align: middle;
+}
+
+/* Centrer le lien "Détails" */
+.tableau td a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.tableau td a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+td:first-child {
+    text-align: left;
+    width: 30%;
+}
+
+td:last-child {
+    text-align: left;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+.info-obligatoire {
+    border: 2px solid red;   /* Bordure rouge */
+    background-color: #ffcccc;  /* Fond rouge clair */
+    color: red;              /* Texte rouge */
+    padding: 10px;           /* Espacement interne */
+    margin: 10px 0;          /* Espacement autour du cadre */
+    font-weight: bold;       /* Texte en gras */
+    border-radius: 5px;      /* Coins arrondis */
+}
+
+
+.valide button {
+    background-color: #003366;  /* Bleu marine */
+    color: white;               /* Texte en blanc */
+    border: none;               /* Supprime la bordure */
+    padding: 12px 20px;         /* Augmente la taille du bouton */
+    font-size: 16px;            /* Augmente la taille de la police */
+    cursor: pointer;           /* Change le curseur en main lors du survol */
+    border-radius: 3px;         /* Coins arrondis */
+    transition: background-color 0.3s; /* Transition de couleur au survol */
+}
+
+.valide button:hover {
+    background-color: #001429;  /* Change la couleur en bleu plus foncé lors du survol */
+}
