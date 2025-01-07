@@ -12,6 +12,19 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
+// Démarre la session pour vérifier le rôle de l'utilisateur
+session_start();
+
+// Vérifie si l'utilisateur est connecté et si le rôle est défini
+if (!isset($_SESSION['user_role'])) {
+    // Si l'utilisateur n'est pas connecté, redirige-le vers la page de connexion
+    header("Location: logAppli.html?error=Vous devez être connecté.");
+    exit();
+}
+
+// Définir le rôle de l'utilisateur en fonction de la session
+$user_role = $_SESSION['user_role'];
+
 // Gestion de la colonne dynamique
 $selected_column = $_POST['additional_column'] ?? null;
 
@@ -67,13 +80,13 @@ $entreprises = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="sidebar">
-        <a href="accueilAppli.php" class="active">
+        <a href="accueilAppli.php">
             <img src="icons/home.png" alt="Accueil" class="icon"> Accueil
         </a>
 
         <?php if ($user_role === 'etudiant'): ?>
             <!-- Liens visibles uniquement pour les étudiants -->
-            <a href="entreprise-vueEtudiant.php">
+            <a href="entreprise-vueEtudiant.php" class="active">
                 <img src="icons/entreprise.png" alt="Entreprise" class="icon"> Entreprise
             </a>
             <a href="listeEtudiantStage.php">
@@ -87,7 +100,7 @@ $entreprises = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </a>
         <?php elseif ($user_role === 'professeur'): ?>
             <!-- Liens visibles uniquement pour les professeurs -->
-            <a href="entreprise-vueProf.php">
+            <a href="entreprise-vueProf.php" class="active">
                 <img src="icons/entreprise.png" alt="Entreprise" class="icon"> Entreprise
             </a>
             <a href="listeEtudiantStage.php">
